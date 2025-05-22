@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sitio informativo sobre inclusión social y cómo combatir la exclusión">
+  <title>Inclusión Social | Construyendo una Sociedad para Todos</title>
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --accent: #3498db;
+    }
+   
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+   
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f7fa;
+    }
+   
+    header {
+      background: linear-gradient(135deg, var(--primary), #1a252f);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+   
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f7fa" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f7fa" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f7fa"/></svg>');
+      background-size: cover;
+      z-index: 1;
+    }
+   
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+   
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+   
+    .slogan {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+   
+    .tagline {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+   
+    nav {
+      background-color: var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+   
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+   
+    .logo {
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 1rem 0;
+    }
+   
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+   
+    .nav-links li {
+      margin-left: 1.5rem;
+    }
+   
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 1rem 0;
+      display: block;
+      position: relative;
+      transition: color 0.3s;
+    }
+   
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: var(--secondary);
+      transition: width 0.3s;
+    }
+   
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+   
+    .marquee {
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.8rem;
+      text-align: center;
+      font-weight: 500;
+    }
+   
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+   
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+   
+    @media (min-width: 992px) {
+      .main-grid {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+   
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+   
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+   
+    .card-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+   
+    .card-content {
+      padding: 1.5rem;
+    }
+   
+    .card h2 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+   
+    .card p {
+      margin-bottom: 1.5rem;
+    }
+   
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+   
+    .btn:hover {
+      background-color: #2980b9;
+    }
+   
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+   
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+   
+    th {
+      background-color: var(--primary);
+      color: white;
+      font-weight: 500;
+    }
+   
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+   
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+   
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+   
+    .stat-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+   
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+   
+    .stat-label {
+      color: var(--dark);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+   
+    .sidebar-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+   
+    .sidebar-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--light);
+    }
+   
+    .link-list {
+      list-style: none;
+    }
+   
+    .link-list li {
+      margin-bottom: 0.8rem;
+    }
+   
+    .link-list a {
+      color: var(--dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+    }
+   
+    .link-list a::before {
+      content: "→";
+      margin-right: 0.5rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+   
+    .link-list a:hover {
+      color: var(--accent);
+    }
+   
+    .link-list a:hover::before {
+      transform: translateX(3px);
+    }
+   
+    .testimonial {
+      background-color: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+   
+    .testimonial::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      color: rgba(0,0,0,0.1);
+      line-height: 1;
+    }
+   
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+   
+    .testimonial-author {
+      font-weight: 500;
+      text-align: right;
+    }
+   
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+   
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+   
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+   
+    .footer-links {
+      list-style: none;
+    }
+   
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+   
+    .footer-links a {
+      color: #bdc3c7;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+   
+    .footer-links a:hover {
+      color: white;
+    }
+   
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+   
+    .social-links a {
+      color: white;
+      background-color: rgba(255,255,255,0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+   
+    .social-links a:hover {
+      background-color: var(--accent);
+    }
+   
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #bdc3c7;
+      font-size: 0.9rem;
+    }
+   
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+   
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+   
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+   
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+   
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1 class="fade-in">Inclusión Social</h1>
+      <div class="slogan fade-in delay-1">"Nadie sobra, todos pertenecemos"</div>
+      <p class="tagline fade-in delay-2">Trabajando juntos para construir una sociedad más justa e inclusiva donde cada persona tenga la oportunidad de prosperar.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">InclusiónSocial</a>
+      <ul class="nav-links">
+        <li><a href="#que-es">¿Qué es?</a></li>
+        <li><a href="#causas">Causas</a></li>
+        <li><a href="#impacto">Impacto</a></li>
+        <li><a href="#soluciones">Soluciones</a></li>
+        <li><a href="#involucrate">Involúcrate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="marquee">
+    <strong>Únete al movimiento:</strong> La inclusión comienza con pequeños actos de aceptación y respeto hacia los demás.
+  </div>
+
+  <div class="container">
+    <div class="main-grid">
+      <main>
+        <section id="que-es" class="card fade-in">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Grupo diverso de personas tomadas de la mano formando un círculo" class="card-img">
+          <div class="card-content">
+            <h2>¿Qué es la exclusión social?</h2>
+            <p>La exclusión social es un proceso complejo y multidimensional que impide a ciertos individuos o grupos participar plenamente en la vida económica, social, política y cultural de la sociedad en la que viven. Va más allá de la pobreza económica, afectando el acceso a derechos fundamentales, oportunidades y redes de apoyo.</p>
+            <p>Este fenómeno puede manifestarse a través de la discriminación, la segregación, la falta de acceso a servicios básicos, o la imposibilidad de participar en decisiones que afectan la vida de las personas.</p>
+            <a href="#" class="btn">Aprende más</a>
+          </div>
+        </section>
+
+        <section id="impacto" class="fade-in delay-1">
+          <h2>El impacto de la exclusión social</h2>
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-number">25%</div>
+              <div class="stat-label">de la población mundial</div>
+              <p>experimenta alguna forma de exclusión</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3x</div>
+              <div class="stat-label">más probabilidades</div>
+              <p>de problemas de salud mental</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">40%</div>
+              <div class="stat-label">brecha salarial</div>
+              <p>para grupos marginados</p>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Grupo afectado</th>
+                <th>Formas de exclusión</th>
+                <th>Consecuencias</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Personas con discapacidad</td>
+                <td>Barreras arquitectónicas, prejuicios, falta de accesibilidad</td>
+                <td>Limitado acceso a educación, empleo y participación social</td>
+              </tr>
+              <tr>
+                <td>Minorías étnicas</td>
+                <td>Discriminación, estereotipos, racismo institucional</td>
+                <td>Desigualdad económica, segregación, falta de representación</td>
+              </tr>
+              <tr>
+                <td>Personas mayores</td>
+                <td>Edadismo, exclusión digital, falta de adaptación</td>
+                <td>Aislamiento social, pobreza, problemas de salud</td>
+              </tr>
+              <tr>
+                <td>Comunidad LGBTIQ+</td>
+                <td>Homofobia, transfobia, rechazo familiar</td>
+                <td>Mayor riesgo de suicidio, falta de protección legal</td>
+              </tr>
+              <tr>
+                <td>Migrantes y refugiados</td>
+                <td>Xenofobia, barreras lingüísticas, estatus legal</td>
+                <td>Explotación laboral, dificultades de integración</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="soluciones" class="card fade-in delay-2">
+          <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Manos de diferentes personas trabajando juntas" class="card-img">
+          <div class="card-content">
+            <h2>Soluciones y estrategias</h2>
+            <p>Combatir la exclusión social requiere un enfoque multidimensional que involucre a individuos, comunidades, empresas y gobiernos. Algunas estrategias efectivas incluyen:</p>
+            <ul style="margin: 1rem 0 1.5rem 1.5rem;">
+              <li>Políticas públicas inclusivas y antidiscriminatorias</li>
+              <li>Educación en diversidad desde edades tempranas</li>
+              <li>Programas de mentoría y acompañamiento</li>
+              <li>Accesibilidad universal en espacios y servicios</li>
+              <li>Promoción de la participación ciudadana</li>
+            </ul>
+            <p>Cada acción cuenta. Pequeños cambios en nuestro comportamiento diario pueden crear grandes impactos en la vida de quienes experimentan exclusión.</p>
+            <a href="#" class="btn">Ver acciones concretas</a>
+          </div>
+        </section>
+
+        <section class="testimonial fade-in delay-3">
+          <p class="testimonial-text">"Durante años me sentí invisible en mi propio país por mi discapacidad visual. Fue gracias a programas de inclusión laboral que pude demostrar mi valor profesional y hoy lidero un equipo diverso donde cada talento es reconocido."</p>
+          <p class="testimonial-author">- Laura M., Directora de Proyectos</p>
+        </section>
+      </main>
+
+      <aside>
+        <div class="sidebar-card fade-in">
+          <h3>Explora más</h3>
+          <ul class="link-list">
+            <li><a href="testimonios.html">Historias de superación</a></li>
+            <li><a href="recursos.html">Guías y recursos</a></li>
+            <li><a href="organizaciones.html">Organizaciones aliadas</a></li>
+            <li><a href="eventos.html">Eventos y talleres</a></li>
+            <li><a href="voluntariado.html">Oportunidades de voluntariado</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card fade-in delay-1">
+          <h3>¿Cómo puedes ayudar?</h3>
+          <ul style="margin-left: 1.5rem;">
+            <li>Educate sobre tus prejuicios inconscientes</li>
+            <li>Amplifica voces marginadas</li>
+            <li>Apoya negocios diversos</li>
+            <li>Denuncia actos discriminatorios</li>
+            <li>Participa en iniciativas comunitarias</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card fade-in delay-2">
+          <h3>Datos clave</h3>
+          <p><strong>1 de cada 3</strong> personas ha experimentado exclusión en algún momento de su vida.</p>
+          <p>Las sociedades inclusivas tienen <strong>40% menos</strong> conflictos sociales.</p>
+          <p>La diversidad en equipos aumenta la <strong>innovación en un 60%</strong>.</p>
+        </div>
+
+        <div class="sidebar-card fade-in delay-3">
+          <h3>Newsletter</h3>
+          <p>Recibe información y recursos sobre inclusión social en tu correo.</p>
+          <form style="margin-top: 1rem;">
+            <input type="email" placeholder="Tu correo electrónico" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+            <button type="submit" style="background-color: var(--accent); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer;">Suscribirse</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Sobre nosotros</h3>
+        <p>Somos una organización comprometida con la construcción de sociedades más inclusivas donde todas las personas tengan igualdad de oportunidades.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Recursos</a></li>
+          <li><a href="#">Investigaciones</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <p>info@inclusionsocial.org</p>
+        <p>+1 (555) 123-4567</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Twitter">t</a>
+          <a href="#" aria-label="Instagram">i</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2023 Inclusión Social. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos multimedia sobre inclusión social">
+  <title>Multimedia | Inclusión Social</title>
+  <style>
+    /* Mantenemos todos los estilos del original y añadimos algunos nuevos */
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --accent: #3498db;
+    }
+   
+    /* Estilos adicionales para la página multimedia */
+    .media-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+   
+    .media-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+   
+    .media-card:hover {
+      transform: translateY(-5px);
+    }
+   
+    .media-content {
+      padding: 1.5rem;
+    }
+   
+    video, audio {
+      width: 100%;
+      border-radius: 4px;
+    }
+   
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+   
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+   
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+   
+    .contact-form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+   
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+   
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+   
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+    }
+   
+    .form-group textarea {
+      min-height: 120px;
+    }
+   
+    .submit-btn {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+   
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+   
+    .resource-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+   
+    .resource-link {
+      background-color: var(--light);
+      color: var(--dark);
+      padding: 0.8rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+   
+    .resource-link:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <h1 class="fade-in">Recursos Multimedia</h1>
+      <div class="slogan fade-in delay-1">"Aprende, siente y actúa por la inclusión"</div>
+      <p class="tagline fade-in delay-2">Explora nuestros recursos audiovisuales para comprender mejor los desafíos y soluciones de la inclusión social.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">InclusiónSocial</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#audios">Podcasts</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="marquee">
+    <strong>Nuevo recurso:</strong> Mira nuestro documental "Voces Incluidas" disponible ahora en la sección de videos.
+  </div>
+
+  <div class="container">
+    <section id="videos" class="fade-in">
+      <h2>Videos Educativos</h2>
+      <div class="media-section">
+        <div class="media-card">
+          <video controls poster="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <div class="media-content">
+            <h3>Rompiendo Barreras</h3>
+            <p>Documental sobre personas con discapacidad que han superado obstáculos sociales.</p>
+            <a href="#" class="btn">Ver más</a>
+          </div>
+        </div>
+       
+        <div class="media-card">
+          <video controls poster="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <div class="media-content">
+            <h3>Diversidad en el Trabajo</h3>
+            <p>Cómo las empresas inclusivas logran mejores resultados.</p>
+            <a href="#" class="btn">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="audios" class="fade-in delay-1">
+      <h2>Podcasts y Audios</h2>
+      <div class="media-section">
+        <div class="media-card">
+          <audio controls style="width: 100%;">
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+          <div class="media-content">
+            <h3>Historias de Inclusión</h3>
+            <p>Episodio 45: María, una madre migrante que encontró su lugar.</p>
+            <a href="#" class="btn">Escuchar más</a>
+          </div>
+        </div>
+       
+        <div class="media-card">
+          <audio controls style="width: 100%;">
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+          </audio>
+          <div class="media-content">
+            <h3>Inclusión Digital</h3>
+            <p>Cómo la tecnología puede ser una herramienta de inclusión o exclusión.</p>
+            <a href="#" class="btn">Escuchar más</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="fade-in delay-2">
+      <h2>Galería Fotográfica</h2>
+      <p>Imágenes que capturan momentos de inclusión y diversidad en diferentes contextos sociales.</p>
+     
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Niños de diferentes etnias jugando juntos">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Persona en silla de ruedas participando en una actividad laboral">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Grupo diverso en una reunión de trabajo">
+        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Manos de diferentes personas trabajando juntas">
+        <img src="https://images.unsplash.com/photo-1542623026-a637a6b5ee0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Personas mayores participando en talleres comunitarios">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Equipo diverso celebrando un éxito">
+      </div>
+    </section>
+
+    <section id="contacto" class="fade-in delay-3">
+      <h2>Formulario de Contacto</h2>
+      <p>¿Tienes preguntas, sugerencias o quieres compartir tu historia? Contáctanos.</p>
+     
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="interes">Área de interés</label>
+            <select id="interes">
+              <option value="">Selecciona una opción</option>
+              <option value="voluntariado">Voluntariado</option>
+              <option value="donaciones">Donaciones</option>
+              <option value="colaboracion">Colaboración institucional</option>
+              <option value="prensa">Prensa y medios</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+         
+          <div class="form-group">
+            <label for="mensaje">Tu mensaje</label>
+            <textarea id="mensaje" required></textarea>
+          </div>
+         
+          <button type="submit" class="submit-btn">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Recursos Adicionales</h2>
+      <p>Explora estos enlaces para aprender más sobre inclusión social:</p>
+     
+      <div class="resource-links">
+        <a href="https://www.un.org/es/" class="resource-link" target="_blank">Naciones Unidas</a>
+        <a href="https://www.unesco.org/es" class="resource-link" target="_blank">UNESCO</a>
+        <a href="https://www.amnesty.org/es/" class="resource-link" target="_blank">Amnistía Internacional</a>
+        <a href="https://www.humanrights.gov.au/" class="resource-link" target="_blank">Derechos Humanos</a>
+        <a href="https://www.inclusion-international.org/" class="resource-link" target="_blank">Inclusion International</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Multimedia</h3>
+        <ul class="footer-links">
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#audios">Podcasts</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Guías prácticas</a></li>
+          <li><a href="#">Investigaciones</a></li>
+          <li><a href="#">Material educativo</a></li>
+          <li><a href="#">Biblioteca digital</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Conéctate</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">y</a>
+          <a href="#" aria-label="Spotify">s</a>
+          <a href="#" aria-label="Podcast">p</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2023 Inclusión Social. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos multimedia sobre inclusión social">
+  <title>Multimedia | Inclusión Social</title>
+  <style>
+    /* Mantenemos todos los estilos del original */
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --accent: #3498db;
+    }
+   
+    /* Estilos mejorados para la página multimedia */
+    .media-hero {
+      background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
+                  url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+   
+    .media-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+   
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+   
+    .media-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+   
+    .media-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+   
+    .media-card video,
+    .media-card iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      display: block;
+    }
+   
+    .media-card audio {
+      width: 100%;
+      padding: 1rem;
+      background: var(--light);
+    }
+   
+    .media-content {
+      padding: 1.5rem;
+    }
+   
+    .media-content h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+   
+    .media-content p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+   
+    .gallery-section {
+      background: var(--light);
+      padding: 3rem 0;
+      margin: 3rem 0;
+    }
+   
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+   
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      height: 200px;
+    }
+   
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+   
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+   
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(44, 62, 80, 0.8);
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+   
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+   
+    .contact-section {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 3rem 0;
+    }
+   
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+   
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+   
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+   
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+   
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-family: inherit;
+      transition: border-color 0.3s;
+    }
+   
+    .form-control:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+   
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+   
+    .submit-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+   
+    .submit-btn:hover {
+      background: #2980b9;
+    }
+   
+    .resources-section {
+      margin: 3rem 0;
+    }
+   
+    .resource-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+   
+    .resource-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+   
+    .resource-card:hover {
+      transform: translateY(-5px);
+    }
+   
+    .resource-card h4 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+   
+    .resource-links {
+      list-style: none;
+    }
+   
+    .resource-links li {
+      margin-bottom: 0.8rem;
+    }
+   
+    .resource-links a {
+      color: var(--dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+    }
+   
+    .resource-links a::before {
+      content: "→";
+      margin-right: 0.5rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+   
+    .resource-links a:hover {
+      color: var(--accent);
+    }
+   
+    .resource-links a:hover::before {
+      transform: translateX(5px);
+    }
+   
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+     
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+     
+      .media-grid,
+      .gallery-grid,
+      .resource-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header y Nav igual que en la página original -->
+  <header>
+    <div class="header-content">
+      <h1 class="fade-in">Recursos Multimedia</h1>
+      <div class="slogan fade-in delay-1">"Experiencias que inspiran inclusión"</div>
+      <p class="tagline fade-in delay-2">Descubre historias, testimonios y recursos audiovisuales que promueven la inclusión social en todos los ámbitos.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">InclusiónSocial</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#podcasts">Podcasts</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="marquee">
+    <strong>Nuevo:</strong> Documental "Voces Incluidas" ahora disponible - Historias reales de superación y aceptación.
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="media-container">
+    <section id="videos" class="fade-in">
+      <h2>Videos Inspiradores</h2>
+      <p class="tagline">Historias reales que muestran el poder de la inclusión en diferentes contextos sociales.</p>
+     
+      <div class="media-grid">
+        <div class="media-card">
+          <video controls poster="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+          </video>
+          <div class="media-content">
+            <h3>Rompiendo Barreras</h3>
+            <p>Documental sobre personas con discapacidad que han transformado sus comunidades.</p>
+            <a href="#" class="btn">Ver documental completo</a>
+          </div>
+        </div>
+       
+        <div class="media-card">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="media-content">
+            <h3>Inclusión Laboral</h3>
+            <p>Cómo las empresas están adoptando prácticas inclusivas con resultados sorprendentes.</p>
+            <a href="#" class="btn">Más casos de éxito</a>
+          </div>
+        </div>
+       
+        <div class="media-card">
+          <video controls poster="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+          </video>
+          <div class="media-content">
+            <h3>Educación Inclusiva</h3>
+            <p>Modelos educativos que están cambiando vidas en comunidades marginadas.</p>
+            <a href="#" class="btn">Conocer modelos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="podcasts" class="fade-in delay-1">
+      <h2>Podcasts sobre Inclusión</h2>
+      <p class="tagline">Escucha experiencias y análisis sobre diversidad e inclusión social.</p>
+     
+      <div class="media-grid">
+        <div class="media-card">
+          <audio controls>
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+          </audio>
+          <div class="media-content">
+            <h3>Historias de Vida</h3>
+            <p>Ep. 12: Juan, de la exclusión a líder comunitario.</p>
+            <a href="#" class="btn">Todos los episodios</a>
+          </div>
+        </div>
+       
+        <div class="media-card">
+          <audio controls>
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+          </audio>
+          <div class="media-content">
+            <h3>Inclusión Digital</h3>
+            <p>Cómo la tecnología puede ser puente o barrera para la inclusión.</p>
+            <a href="#" class="btn">Escuchar serie completa</a>
+          </div>
+        </div>
+       
+        <div class="media-card">
+          <audio controls>
+            <source src="https://samplelib.com/lib/preview/mp3/sample-3s.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio HTML5.
+          </audio>
+          <div class="media-content">
+            <h3>Políticas Públicas</h3>
+            <p>Análisis de leyes y programas que promueven la inclusión social.</p>
+            <a href="#" class="btn">Suscribirse al podcast</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery-section fade-in delay-2">
+      <div class="media-container">
+        <h2>Galería Fotográfica</h2>
+        <p class="tagline">Imágenes que capturan momentos de inclusión y diversidad alrededor del mundo.</p>
+       
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Niños de diferentes etnias jugando juntos">
+            <div class="gallery-caption">Juego inclusivo en escuela primaria</div>
+          </div>
+         
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Persona en silla de ruedas trabajando">
+            <div class="gallery-caption">Inclusión laboral en práctica</div>
+          </div>
+         
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Equipo diverso en reunión">
+            <div class="gallery-caption">Diversidad en equipos de trabajo</div>
+          </div>
+         
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Manos de diferentes personas">
+            <div class="gallery-caption">Colaboración sin barreras</div>
+          </div>
+         
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1542623026-a637a6b5ee0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Personas mayores en taller">
+            <div class="gallery-caption">Programas intergeneracionales</div>
+          </div>
+         
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Equipo celebrando">
+            <div class="gallery-caption">Celebrando la diversidad</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact-section fade-in delay-3">
+      <h2>Contáctanos</h2>
+      <p class="tagline">¿Tienes una historia que compartir o quieres colaborar con nosotros?</p>
+     
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" class="form-control" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="telefono">Teléfono (opcional)</label>
+            <input type="tel" id="telefono" class="form-control">
+          </div>
+         
+          <div class="form-group">
+            <label for="interes">Área de interés</label>
+            <select id="interes" class="form-control">
+              <option value="">Selecciona una opción</option>
+              <option value="voluntariado">Voluntariado</option>
+              <option value="donaciones">Donaciones</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="testimonio">Compartir testimonio</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+         
+          <div class="form-group full-width">
+            <label for="mensaje">Tu mensaje</label>
+            <textarea id="mensaje" class="form-control" required></textarea>
+          </div>
+         
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Enviar mensaje</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="resources-section fade-in">
+      <h2>Recursos Adicionales</h2>
+      <p class="tagline">Explora más contenido sobre inclusión social en estas plataformas.</p>
+     
+      <div class="resource-cards">
+        <div class="resource-card">
+          <h4>Organizaciones</h4>
+          <ul class="resource-links">
+            <li><a href="https://www.un.org/es/" target="_blank">Naciones Unidas</a></li>
+            <li><a href="https://www.unesco.org/es" target="_blank">UNESCO</a></li>
+            <li><a href="https://www.inclusion-international.org/" target="_blank">Inclusion International</a></li>
+          </ul>
+        </div>
+       
+        <div class="resource-card">
+          <h4>Documentación</h4>
+          <ul class="resource-links">
+            <li><a href="https://www.who.int/es" target="_blank">OMS - Salud inclusiva</a></li>
+            <li><a href="https://www.ilo.org/global/lang--en/index.htm" target="_blank">OIT - Trabajo decente</a></li>
+            <li><a href="https://www.unicef.org/es" target="_blank">UNICEF - Infancia</a></li>
+          </ul>
+        </div>
+       
+        <div class="resource-card">
+          <h4>Herramientas</h4>
+          <ul class="resource-links">
+            <li><a href="https://www.inclusionhub.com/" target="_blank">Guías prácticas</a></li>
+            <li><a href="https://www.disabilityin.org/" target="_blank">Indicadores de inclusión</a></li>
+            <li><a href="https://www.diversitybestpractices.com/" target="_blank">Buenas prácticas</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer igual que en la página original -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Multimedia</h3>
+        <ul class="footer-links">
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#podcasts">Podcasts</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Recursos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Guías prácticas</a></li>
+          <li><a href="#">Investigaciones</a></li>
+          <li><a href="#">Material educativo</a></li>
+          <li><a href="#">Biblioteca digital</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Conéctate</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="YouTube">y</a>
+          <a href="#" aria-label="Spotify">s</a>
+          <a href="#" aria-label="Podcast">p</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2023 Inclusión Social. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
